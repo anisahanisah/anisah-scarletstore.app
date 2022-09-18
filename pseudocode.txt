@@ -1,0 +1,42 @@
+READ AND WRITE "pilihanProduct" AS STRING
+READ AND WRITE "jmlh_barang" INTEGER
+READ AND WRITE "harga_product" AS INTEGER
+READ AND WRITE "stok" AS INTEGER
+READ AND WRITE "total_harga" AS INTEGER
+READ AND WRITE "pilihanUser" AS STRING
+
+
+PROCEDURE ListproductscarletStore():
+    print :
+        1. Bodycare
+        2. Facecare
+        3. Haircare
+	4. Eyecare
+END PROCEDURE
+
+PROCEDURE orderProduct():
+
+        (proses order)
+        print: "Product berhasil diorder"
+END PROCEDURE
+
+main 
+    call ListproductscarletStore():
+    repeat:
+        input: pilihproduct, jmlh_barang
+        if jmlh_barang > stok:
+        print: "stock product habis!"
+        break
+        else:
+        print: "product telah ditambahkan ke keranjang pesanan"
+        print: "Apakah ingin menambah product lain?"
+        input: pilihanUser
+
+until pilihanUser == "ya"
+call ListproductscarletStore ()
+until pilihanUser == "tidak"
+calculating jumlah_barang()
+jmlh_barang*harga_product = total_harga
+checkout
+print: "checkout berhasil, pesanan sedang dikemas!"
+call ListproductscarletStore()
